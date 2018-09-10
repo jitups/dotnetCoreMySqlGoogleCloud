@@ -8,7 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using WebApplication1.Models;
+using PersonLibrary.Entities;
+using PersonLibrary.Repositories;
 
 namespace WebApplication1
 {

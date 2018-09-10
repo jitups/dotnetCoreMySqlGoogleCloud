@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApplication1.Models
+namespace PersonLibrary.Repositories
 {
     public interface IPersonRepository<T>
     {
