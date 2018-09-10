@@ -1,0 +1,31 @@
+﻿@model WebApplication1.Models.Person
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h2>Add</h2>
+<form asp-controller="Person" asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" />
+        <span asp-validation-for="FirstName" class="text-danger" ></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" />
+        <span asp-validation-for="LastName"  class="text-danger" ></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DoB"></label>
+        <input asp-for="DoB" />
+        <span asp-validation-for="DoB" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Note"></label>
+        <input asp-for="Note" />
+    </div>
+    <div class="form-group">
+        <button type="submit">Add</button>
+    </div>
+</form>
+

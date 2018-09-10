@@ -1,0 +1,26 @@
+﻿@model IEnumerable<WebApplication1.Models.Person>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="jumbotron text-center">
+    <h2>Index</h2>
+</div>
+@foreach (var person in Model)
+{
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>
+                @person.FirstName
+            </h4>
+            <p>
+                @person.LastName
+            </p>
+            <p>
+                @person.DoB.ToString("dd MMM yyyy")
+            </p>
+            <p>
+                @person.Note
+            </p>
+        </div>
+    </div>
+}
