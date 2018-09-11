@@ -31,8 +31,9 @@ namespace PersonWebApi
             services.AddDbContext<AppDbContext>(options =>
              options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IPersonRepository<Person>, PersonRepository>();
+            services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +49,11 @@ namespace PersonWebApi
             }
 
             app.UseHttpsRedirection();
+            app.UseCors(builder => builder
+                                    .AllowAnyOrigin()
+                                    .AllowAnyMethod()
+                                    .AllowAnyHeader()
+                                    .AllowCredentials());
             app.UseMvc();
         }
     }
