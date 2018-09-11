@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{A38AC724-D450-4765-BF5E-3EBDAF29F4F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonLibrary", "PersonLibrary\PersonLibrary.csproj", "{C375C688-5BB8-4069-AD32-8496D6534032}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonLibrary", "PersonLibrary\PersonLibrary.csproj", "{C375C688-5BB8-4069-AD32-8496D6534032}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonWebApi", "PersonWebApi\PersonWebApi.csproj", "{76F352E8-A849-4556-8326-41B752BFA479}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C375C688-5BB8-4069-AD32-8496D6534032}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C375C688-5BB8-4069-AD32-8496D6534032}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C375C688-5BB8-4069-AD32-8496D6534032}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76F352E8-A849-4556-8326-41B752BFA479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76F352E8-A849-4556-8326-41B752BFA479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76F352E8-A849-4556-8326-41B752BFA479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76F352E8-A849-4556-8326-41B752BFA479}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
