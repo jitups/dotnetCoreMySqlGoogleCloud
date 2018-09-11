@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PersonLibrary.Repositories
 {
-    public class PersonRepository : IPersonRepository<Person>
+    public class PersonRepository : IRepository<Person>
     {
         private readonly AppDbContext _context;
 

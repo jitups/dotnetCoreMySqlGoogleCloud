@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PersonLibrary.Repositories
 {
-    public class MockPersonRepository : IPersonRepository<Person>
+    public class MockPersonRepository : IRepository<Person>
     {
         private List<Person> _personList = new List<Person>();
 

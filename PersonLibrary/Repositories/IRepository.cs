@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PersonLibrary.Repositories
 {
-    public interface IPersonRepository<T>
+    public interface IRepository<T>
     {
         IEnumerable<T> GetAll();
         T GetById(int personId);

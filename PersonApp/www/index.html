@@ -16,9 +16,9 @@
     <title>PersonApp</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <h1>Persons</h1>
-        <div id="deviceready">
+        <div id="data">
         </div>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
@@ -37,7 +37,7 @@
                 datatype: 'jsonp',
                 success: function (data) {
                     $.each(data, function (i, item) {
-                        $('#deviceready').append('<div class="form-group">' + item.personId + ' ' + item.firstName + '</div>');
+                        $('#data').append('<div class="form-group">' + item.personId + ' ' + item.firstName + '</div>');
                     });
                 },
                 error: function (xhr) {

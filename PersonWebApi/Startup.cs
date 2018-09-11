@@ -30,7 +30,7 @@ namespace PersonWebApi
         {
             services.AddDbContext<AppDbContext>(options =>
              options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddTransient<IPersonRepository<Person>, PersonRepository>();
+            services.AddTransient<IRepository<Person>, PersonRepository>();
             services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 

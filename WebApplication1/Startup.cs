@@ -25,10 +25,10 @@ namespace WebApplication1
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(options =>
-             options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddDbContext<AppDbContext>(options =>
+            // options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddTransient<IPersonRepository<Person>, PersonRepository>();
+            //services.AddTransient<IRepository<Person>, PersonRepository>();
             services.AddMvc();
         }
 

@@ -13,9 +13,9 @@ namespace PersonWebApi.Controllers
     [ApiController]
     public class PersonController : ControllerBase
     {
-        IPersonRepository<Person> _personRepository;
+        IRepository<Person> _personRepository;
 
-        public PersonController(IPersonRepository<Person> personRepository)
+        public PersonController(IRepository<Person> personRepository)
         {
             _personRepository = personRepository;
         }
@@ -31,11 +31,18 @@ namespace PersonWebApi.Controllers
         public IActionResult Get(int id)
         {
             var person = _personRepository.GetById(id);
-            if(person==null)
+            if (person == null)
             {
                 return NotFound();
             }
             return Ok(person);
+        }
+
+        [HttpPost]
+        public IActionResult Post(Person person)
+        {
+            _personRepository.Add(person);
+            return Ok();
         }
     }
 }
