@@ -34,7 +34,7 @@
             $.ajax({
                 url: 'https://mvcwebapi-215708.appspot.com/api/Person',
                 type: 'GET',
-                datatype: 'jsonp',
+                datatype: 'json',
                 success: function (data) {
                     $.each(data, function (i, item) {
                         $('#data').append('<div class="form-group">' + item.personId + ' ' + item.firstName + '</div>');

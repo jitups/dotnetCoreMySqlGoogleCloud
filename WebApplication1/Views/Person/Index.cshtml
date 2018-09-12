@@ -1,26 +1,28 @@
-﻿@model IEnumerable<PersonLibrary.Entities.Person>
+﻿@model IEnumerable<WebApplication1.ViewModel.PersonViewModel>
 @{
     ViewData["Title"] = "Index";
 }
 <div class="jumbotron text-center">
     <h2>Index</h2>
 </div>
-@foreach (var person in Model)
-{
-    <div class="row">
-        <div class="col-sm-12">
-            <h4>
-                @person.FirstName
-            </h4>
-            <p>
-                @person.LastName
-            </p>
-            <p>
-                @person.DoB.ToString("dd MMM yyyy")
-            </p>
-            <p>
-                @person.Note
-            </p>
-        </div>
-    </div>
-}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Birthdate</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+        {
+            <tr>
+                <td>@person.FirstName</td>
+                <td>@person.LastName</td>
+                <td>@person.DoB.ToString("dd MMM yyyy")</td>
+                <td>@person.Note</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using PersonLibrary.Entities;
 using PersonLibrary.Repositories;
+using WebApplication1.ViewModel;
 
 namespace WebApplication1.Controllers
 {
@@ -23,7 +24,7 @@ namespace WebApplication1.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var persons = new List<Person>();
+            var persons = new List<PersonViewModel>();
             using (var client = new HttpClient())
             {
                 client.BaseAddress = baseUrl;
@@ -31,7 +32,7 @@ namespace WebApplication1.Controllers
                 if (responseMessage.IsSuccessStatusCode)
                 {
                     var personsString = responseMessage.Content.ReadAsStringAsync().Result;
-                    persons = JsonConvert.DeserializeObject<List<Person>>(personsString);
+                    persons = JsonConvert.DeserializeObject<List<PersonViewModel>>(personsString);
                 }
             }
             return View(persons);
@@ -39,7 +40,7 @@ namespace WebApplication1.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            var person = new Person();
+            var person = new PersonViewModel();
             using (var client = new HttpClient())
             {
                 client.BaseAddress = baseUrl;
@@ -47,7 +48,7 @@ namespace WebApplication1.Controllers
                 if (responseMessage.IsSuccessStatusCode)
                 {
                     var personString = responseMessage.Content.ReadAsStringAsync().Result;
-                    person = JsonConvert.DeserializeObject<Person>(personString);
+                    person = JsonConvert.DeserializeObject<PersonViewModel>(personString);
                 }
             }
             return View(person);
@@ -79,7 +80,7 @@ namespace WebApplication1.Controllers
             }
             else
             {
-                return View("Index");
+                return View();
             }
 
         }
