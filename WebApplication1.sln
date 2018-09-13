@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonWebApi", "PersonWebAp
 EndProject
 Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "PersonApp", "PersonApp\PersonApp.jsproj", "{BA4346DB-1583-4453-9247-0A5E3642DCE5}"
 EndProject
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "PersonIconicApp", "PersonIconicApp\PersonIconicApp.jsproj", "{B185CA5B-D41D-4BAB-B867-4DD5F3418067}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Android = Debug|Android
@@ -149,6 +151,46 @@ Global
 		{BA4346DB-1583-4453-9247-0A5E3642DCE5}.Release|Windows-x86.ActiveCfg = Release|Windows-x86
 		{BA4346DB-1583-4453-9247-0A5E3642DCE5}.Release|Windows-x86.Build.0 = Release|Windows-x86
 		{BA4346DB-1583-4453-9247-0A5E3642DCE5}.Release|Windows-x86.Deploy.0 = Release|Windows-x86
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Android.ActiveCfg = Debug|Android
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Android.Build.0 = Debug|Android
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Android.Deploy.0 = Debug|Android
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Any CPU.ActiveCfg = Debug|Android
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Any CPU.Build.0 = Debug|Android
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Any CPU.Deploy.0 = Debug|Android
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|iOS.ActiveCfg = Debug|iOS
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|iOS.Build.0 = Debug|iOS
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|iOS.Deploy.0 = Debug|iOS
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Windows-AnyCPU.ActiveCfg = Debug|Windows-AnyCPU
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Windows-AnyCPU.Build.0 = Debug|Windows-AnyCPU
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Windows-AnyCPU.Deploy.0 = Debug|Windows-AnyCPU
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Windows-ARM.ActiveCfg = Debug|Windows-ARM
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Windows-ARM.Build.0 = Debug|Windows-ARM
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Windows-ARM.Deploy.0 = Debug|Windows-ARM
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Windows-x64.ActiveCfg = Debug|Windows-x64
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Windows-x64.Build.0 = Debug|Windows-x64
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Windows-x64.Deploy.0 = Debug|Windows-x64
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Windows-x86.ActiveCfg = Debug|Windows-x86
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Windows-x86.Build.0 = Debug|Windows-x86
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Debug|Windows-x86.Deploy.0 = Debug|Windows-x86
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|Android.ActiveCfg = Release|Android
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|Android.Build.0 = Release|Android
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|Android.Deploy.0 = Release|Android
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|Any CPU.ActiveCfg = Release|Android
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|iOS.ActiveCfg = Release|iOS
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|iOS.Build.0 = Release|iOS
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|iOS.Deploy.0 = Release|iOS
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|Windows-AnyCPU.ActiveCfg = Release|Windows-AnyCPU
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|Windows-AnyCPU.Build.0 = Release|Windows-AnyCPU
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|Windows-AnyCPU.Deploy.0 = Release|Windows-AnyCPU
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|Windows-ARM.ActiveCfg = Release|Windows-ARM
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|Windows-ARM.Build.0 = Release|Windows-ARM
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|Windows-ARM.Deploy.0 = Release|Windows-ARM
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|Windows-x64.ActiveCfg = Release|Windows-x64
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|Windows-x64.Build.0 = Release|Windows-x64
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|Windows-x64.Deploy.0 = Release|Windows-x64
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|Windows-x86.ActiveCfg = Release|Windows-x86
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|Windows-x86.Build.0 = Release|Windows-x86
+		{B185CA5B-D41D-4BAB-B867-4DD5F3418067}.Release|Windows-x86.Deploy.0 = Release|Windows-x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
