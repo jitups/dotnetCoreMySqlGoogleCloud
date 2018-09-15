@@ -10,5 +10,6 @@ namespace PersonLibrary.Repositories
         IEnumerable<T> GetAll();
         T GetById(int personId);
         void Add(T entity);
+        void Update(T Entity);
     }
 }

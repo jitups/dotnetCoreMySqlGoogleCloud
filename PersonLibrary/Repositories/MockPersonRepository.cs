@@ -35,5 +35,8 @@ namespace PersonLibrary.Repositories
         {
             return _personList.FirstOrDefault(p => p.PersonId == personId);
         }
+
+        public void Update(Person entity)
+        { }
     }
 }

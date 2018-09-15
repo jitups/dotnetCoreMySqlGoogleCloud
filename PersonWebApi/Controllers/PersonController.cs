@@ -44,5 +44,12 @@ namespace PersonWebApi.Controllers
             _personRepository.Add(person);
             return Ok();
         }
+
+        [HttpPut]
+        public IActionResult Put(Person person)
+        {
+            _personRepository.Update(person);
+            return Ok();
+        }
     }
 }

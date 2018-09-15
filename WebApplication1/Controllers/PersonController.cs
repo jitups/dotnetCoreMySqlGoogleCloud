@@ -40,6 +40,12 @@ namespace WebApplication1.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
+            PersonViewModel person = await getPersonViewModelById(id);
+            return View(person);
+        }
+
+        private async Task<PersonViewModel> getPersonViewModelById(int id)
+        {
             var person = new PersonViewModel();
             using (var client = new HttpClient())
             {
@@ -51,7 +57,8 @@ namespace WebApplication1.Controllers
                     person = JsonConvert.DeserializeObject<PersonViewModel>(personString);
                 }
             }
-            return View(person);
+
+            return person;
         }
 
         public IActionResult Add()
@@ -71,6 +78,39 @@ namespace WebApplication1.Controllers
                     client.BaseAddress = baseUrl;
                     //StringContent content = new StringContent(JsonConvert.SerializeObject(person), Encoding.UTF8, "application/json");
                     var responseMessage = await client.PostAsJsonAsync("api/Person", person);
+                    if (responseMessage.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                }
+                return View();
+            }
+            else
+            {
+                return View();
+            }
+
+        }
+
+
+        public async Task<IActionResult> Update(int id)
+        {
+            PersonViewModel person = await getPersonViewModelById(id);
+            return View(person);
+        }
+
+        [HttpPost]
+        [ActionName("Update")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(Person person)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = baseUrl;
+                    //StringContent content = new StringContent(JsonConvert.SerializeObject(person), Encoding.UTF8, "application/json");
+                    var responseMessage = await client.PutAsJsonAsync("api/Person", person);
                     if (responseMessage.IsSuccessStatusCode)
                     {
                         return RedirectToAction("Index");

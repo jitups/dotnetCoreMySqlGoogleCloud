@@ -30,5 +30,11 @@ namespace PersonLibrary.Repositories
         {
             return _context.Persons.SingleOrDefault(p => p.PersonId == personId);
         }
+
+        public void Update(Person entity)
+        {
+            _context.Update(entity);
+            _context.SaveChanges();
+        }
     }
 }
