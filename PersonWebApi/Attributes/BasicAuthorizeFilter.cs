@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using PersonLibrary.Entities;
+using PersonLibrary.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +13,10 @@ namespace PersonWebApi.Attributes
     public class BasicAuthorizeFilter : IAuthorizationFilter
     {
         private readonly string realm;
-        public BasicAuthorizeFilter(string realm = null)
+        private readonly IRepository<User> _userRepository;
+        public BasicAuthorizeFilter(IRepository<User> userRepository, string realm = null)
         {
+            _userRepository = userRepository;
             this.realm = realm;
         }
         public void OnAuthorization(AuthorizationFilterContext context)
@@ -47,8 +51,7 @@ namespace PersonWebApi.Attributes
         public bool IsAuthorized(string username, string password)
         {
             // Check that username and password are correct
-            return username.Equals("webappuser", StringComparison.InvariantCultureIgnoreCase)
-                   && password.Equals("Jitu@123");
+            return _userRepository.GetAsPerCriteria(u => u.UserName == username && u.Password == password && u.IsActive == true).Count() > 0;
         }
 
     }

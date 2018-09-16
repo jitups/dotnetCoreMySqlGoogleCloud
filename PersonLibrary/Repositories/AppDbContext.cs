@@ -15,5 +15,6 @@ namespace PersonLibrary.Repositories
         }
 
         public DbSet<Person> Persons { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

@@ -35,6 +35,7 @@ namespace PersonWebApi
                     options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddTransient<IRepository<Person>, PersonRepository>();
+            services.AddTransient<IRepository<User>, UserRepository>();
 
             services.AddCors();
 

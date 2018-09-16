@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace PersonLibrary.Repositories
@@ -29,6 +30,11 @@ namespace PersonLibrary.Repositories
         public IEnumerable<Person> GetAll()
         {
             return _personList;
+        }
+
+        public IEnumerable<Person> GetAsPerCriteria(Expression<Func<Person, bool>> predicate)
+        {
+            throw new NotImplementedException();
         }
 
         public Person GetById(int personId)
