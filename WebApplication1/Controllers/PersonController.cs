@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,8 +15,8 @@ namespace WebApplication1.Controllers
 {
     public class PersonController : Controller
     {
-        //Uri baseUrl = new Uri("https://mvcwebapi-215708.appspot.com/");
-        Uri baseUrl = new Uri("https://localhost:44331");
+        Uri baseUrl = new Uri("https://mvcwebapi-215708.appspot.com/");
+        //Uri baseUrl = new Uri("https://localhost:44331");
 
         //public PersonController(IRepository<Person> personRepository)
         //{
@@ -25,9 +26,10 @@ namespace WebApplication1.Controllers
         public async Task<IActionResult> Index()
         {
             var persons = new List<PersonViewModel>();
-            using (var client = new HttpClient())
+            using (var client = getClient())
             {
                 client.BaseAddress = baseUrl;
+
                 var responseMessage = await client.GetAsync("api/Person");
                 if (responseMessage.IsSuccessStatusCode)
                 {
@@ -38,27 +40,42 @@ namespace WebApplication1.Controllers
             return View(persons);
         }
 
+        private static HttpClient getClient()
+        {
+            return new HttpClient(new HttpClientHandler() { Credentials = new NetworkCredential("webappuser", "Jitu@123") });
+        }
+
         public async Task<IActionResult> Details(int id)
         {
             PersonViewModel person = await getPersonViewModelById(id);
-            return View(person);
+            if (person != null)
+            {
+                return View(person);
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Issue while fetching the data";
+                return RedirectToAction("Index");
+            }
+
         }
 
         private async Task<PersonViewModel> getPersonViewModelById(int id)
         {
-            var person = new PersonViewModel();
-            using (var client = new HttpClient())
+            using (var client = getClient())
             {
                 client.BaseAddress = baseUrl;
                 var responseMessage = await client.GetAsync("api/Person/" + id);
                 if (responseMessage.IsSuccessStatusCode)
                 {
+                    var person = new PersonViewModel();
                     var personString = responseMessage.Content.ReadAsStringAsync().Result;
                     person = JsonConvert.DeserializeObject<PersonViewModel>(personString);
+                    return person;
                 }
             }
 
-            return person;
+            return null;
         }
 
         public IActionResult Add()
@@ -73,7 +90,7 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                using (var client = new HttpClient())
+                using (var client = getClient())
                 {
                     client.BaseAddress = baseUrl;
                     //StringContent content = new StringContent(JsonConvert.SerializeObject(person), Encoding.UTF8, "application/json");
@@ -96,7 +113,15 @@ namespace WebApplication1.Controllers
         public async Task<IActionResult> Update(int id)
         {
             PersonViewModel person = await getPersonViewModelById(id);
-            return View(person);
+            if (person != null)
+            {
+                return View(person);
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Issue while fetching the data";
+                return RedirectToAction("Index");
+            }
         }
 
         [HttpPost]
@@ -106,7 +131,7 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                using (var client = new HttpClient())
+                using (var client = getClient())
                 {
                     client.BaseAddress = baseUrl;
                     //StringContent content = new StringContent(JsonConvert.SerializeObject(person), Encoding.UTF8, "application/json");

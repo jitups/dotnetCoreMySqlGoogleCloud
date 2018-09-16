@@ -5,6 +5,18 @@
 <div class="jumbotron text-center">
     <h2>Index</h2>
 </div>
+
+
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div id="errorMassage" class="alert-danger">
+        @TempData["ErrorMessage"].ToString()
+    </div>
+}
+
+
+
 <table class="table table-striped">
     <thead>
         <tr>
@@ -17,13 +29,13 @@
     <tbody>
         @foreach (var person in Model)
         {
-        <tr>
-            <td>@person.FirstName</td>
-            <td>@person.LastName</td>
-            <td>@person.DoB.ToString("dd MMM yyyy")</td>
-            <td>@person.Note</td>
-            <td><a asp-controller="Person" asp-action="Update" asp-route-id="@person.PersonId">Update</a></td>
-        </tr>
+            <tr>
+                <td>@person.FirstName</td>
+                <td>@person.LastName</td>
+                <td>@person.DoB.ToString("dd MMM yyyy")</td>
+                <td>@person.Note</td>
+                <td><a asp-controller="Person" asp-action="Update" asp-route-id="@person.PersonId">Update</a></td>
+            </tr>
         }
     </tbody>
 </table>

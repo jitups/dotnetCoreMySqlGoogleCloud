@@ -25,9 +25,7 @@
                     <th>Birth Date</th>
                 </tr>
             </thead>
-            <tbody id="data" >
-
-            </tbody>
+            <tbody id="data"></tbody>
         </table>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
@@ -45,18 +43,31 @@
             //https://mvcwebapi-215708.appspot.com/api/Person
             //https://localhost:44331/api/Person
             $.ajax({
-                url: 'https://mvcwebapi-215708.appspot.com/api/Person',
+                url: 'https://localhost:44331/api/Person',
                 type: 'GET',
                 datatype: 'json',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', make_base_auth("webappuser", "Jitu@123"));
+                },
+                xhrFields: {
+                    withCredentials: true
+                },
+                crossDomain: true,
                 success: function (data) {
                     $.each(data, function (i, item) {
-                        $('#data').append('<tr><td>' + item.firstName + ' ' + item.lastName + '</td><td>' + item.doB +'</td></tr>');
+                        $('#data').append('<tr><td>' + item.firstName + ' ' + item.lastName + '</td><td>' + item.doB + '</td></tr>');
                     });
                 },
                 error: function (xhr) {
                     alert("An error occured: " + xhr.status + " " + xhr.statusText);
                 }
             }))
+
+        function make_base_auth(user, password) {
+            var tok = user + ':' + password;
+            var hash = btoa(tok);
+            return "Basic " + hash;
+        }
 
     </script>
 </body>
