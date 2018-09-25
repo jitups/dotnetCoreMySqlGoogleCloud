@@ -36,6 +36,7 @@ namespace PersonWebApi
 
             services.AddTransient<IRepository<Person>, PersonRepository>();
             services.AddTransient<IRepository<User>, UserRepository>();
+            services.AddTransient<IRepository<Movie>, MovieRepository>();
 
             services.AddCors();
 

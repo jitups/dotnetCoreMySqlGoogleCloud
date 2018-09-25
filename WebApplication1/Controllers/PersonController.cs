@@ -7,8 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using PersonLibrary.Entities;
-using PersonLibrary.Repositories;
+
 using WebApplication1.ViewModel;
 
 namespace WebApplication1.Controllers
@@ -86,7 +85,7 @@ namespace WebApplication1.Controllers
         [HttpPost]
         [ActionName("Add")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddPerson(Person person)
+        public async Task<IActionResult> AddPerson(PersonViewModel person)
         {
             if (ModelState.IsValid)
             {
@@ -127,7 +126,7 @@ namespace WebApplication1.Controllers
         [HttpPost]
         [ActionName("Update")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(Person person)
+        public async Task<IActionResult> Update(PersonViewModel person)
         {
             if (ModelState.IsValid)
             {
