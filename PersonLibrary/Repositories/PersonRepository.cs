@@ -32,6 +32,11 @@ namespace PersonLibrary.Repositories
             return _context.Persons.Where(predicate);
         }
 
+        public IEnumerable<Person> GetPageWise(int pageNumber, int pageSize)
+        {
+            throw new NotImplementedException();
+        }
+
         public Person GetById(int personId)
         {
             return _context.Persons.SingleOrDefault(p => p.PersonId == personId);

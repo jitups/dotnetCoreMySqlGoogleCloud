@@ -13,5 +13,6 @@ namespace PersonLibrary.Repositories
         void Add(T entity);
         void Update(T Entity);
         IEnumerable<T> GetAsPerCriteria(Expression<Func<T,bool>> predicate);
+        IEnumerable<T> GetPageWise(int pageNumber, int pageSize);
     }
 }

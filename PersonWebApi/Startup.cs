@@ -39,7 +39,7 @@ namespace PersonWebApi
             services.AddTransient<IRepository<Movie>, MovieRepository>();
 
             services.AddCors();
-
+            services.AddRouting();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
         }

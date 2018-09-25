@@ -37,6 +37,11 @@ namespace PersonLibrary.Repositories
             throw new NotImplementedException();
         }
 
+        public IEnumerable<Person> GetPageWise(int pageNumber, int pageSize)
+        {
+            throw new NotImplementedException();
+        }
+
         public Person GetById(int personId)
         {
             return _personList.FirstOrDefault(p => p.PersonId == personId);

@@ -29,6 +29,14 @@ namespace PersonWebApi.Controllers
             return Ok(movies);
         }
 
+        [HttpGet]
+        [Route(@"GetPagewise/{pageNumber}")]
+        public IActionResult GetPagewise(int pageNumber)
+        {
+            var movies = _movieRepository.GetPageWise(pageNumber, 10);
+            return Ok(movies);
+        }
+
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
