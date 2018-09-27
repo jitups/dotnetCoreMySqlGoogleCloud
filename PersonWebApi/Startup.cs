@@ -34,9 +34,10 @@ namespace PersonWebApi
             services.AddDbContext<AppDbContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddTransient<IRepository<Person>, PersonRepository>();
-            services.AddTransient<IRepository<User>, UserRepository>();
-            services.AddTransient<IRepository<Movie>, MovieRepository>();
+            services.AddTransient<IDbContext,AppDbContext>();
+            services.AddTransient<IRepository<Person>, EntityRepository<Person>>();
+            services.AddTransient<IRepository<User>, EntityRepository<User>>();
+            services.AddTransient<IRepository<Movie>, EntityRepository<Movie>>();
 
             services.AddCors();
             services.AddRouting();

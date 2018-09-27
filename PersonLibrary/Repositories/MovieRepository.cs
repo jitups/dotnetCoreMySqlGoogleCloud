@@ -9,16 +9,16 @@ namespace PersonLibrary.Repositories
 {
     public class MovieRepository : IRepository<Movie>
     {
-        private readonly AppDbContext _context;
+        private readonly IDbContext _context;
 
-        public MovieRepository(AppDbContext context)
+        public MovieRepository(IDbContext context)
         {
             _context = context;
         }
 
         public void Add(Movie entity)
         {
-            _context.Add(entity);
+           //  .Add(entity);
             _context.SaveChanges();
         }
 

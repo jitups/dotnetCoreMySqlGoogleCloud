@@ -1,6 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
     <Compile Remove="Repositories\AppDbContextFactory.cs" />
+    <Compile Remove="Repositories\MovieRepository.cs" />
+    <Compile Remove="Repositories\PersonRepository.cs" />
+    <Compile Remove="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.1.2" />

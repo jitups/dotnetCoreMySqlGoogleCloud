@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PersonLibrary.Repositories
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : DbContext, IDbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -60,6 +60,16 @@ namespace PersonLibrary.Repositories
             modelBuilder.Entity<Movie>()
                 .Property(m => m.UserRatingDate)
                 .HasColumnName("rating_date");
+        }
+
+        public override int SaveChanges()
+        {
+            return base.SaveChanges();
+        }
+
+        public Task<int> SaveChangesAsync()
+        {
+            return base.SaveChangesAsync();
         }
 
         public DbSet<Person> Persons { get; set; }
