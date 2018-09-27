@@ -25,7 +25,7 @@ namespace PersonWebApi.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var movies = _movieRepository.GetAll();
+            IEnumerable<Movie> movies = _movieRepository.GetAll();
             return Ok(movies);
         }
 
@@ -33,14 +33,14 @@ namespace PersonWebApi.Controllers
         [Route(@"GetPagewise/{pageNumber}")]
         public IActionResult GetPagewise(int pageNumber)
         {
-            var movies = _movieRepository.GetPageWise(pageNumber, 10);
+            IEnumerable<Movie> movies = _movieRepository.GetPageWise(pageNumber, 10);
             return Ok(movies);
         }
 
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            var movie = _movieRepository.GetById(id);
+            Movie movie = _movieRepository.GetById(id);
             if (movie == null)
             {
                 return NotFound();

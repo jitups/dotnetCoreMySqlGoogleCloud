@@ -34,7 +34,7 @@ namespace PersonLibrary.Repositories
 
         public IEnumerable<Movie> GetPageWise(int pageNumber, int pageSize)
         {
-            return _context.Movies.Skip((pageNumber + 1) * pageSize).Take(pageSize);
+            return _context.Movies.Skip(pageNumber * pageSize).Take(pageSize);
         }
 
         public Movie GetById(int personId)
