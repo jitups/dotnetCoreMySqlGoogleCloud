@@ -71,6 +71,8 @@ namespace PersonLibrary.Repositories
                 .Property(m => m.UserRatingDate)
                 .HasColumnName("rating_date");
 
+            modelBuilder.Entity<UserMovieRatings>();
+
             base.OnModelCreating(modelBuilder);
         }
 

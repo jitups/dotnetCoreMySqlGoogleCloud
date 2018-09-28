@@ -38,6 +38,7 @@ namespace PersonWebApi
             services.AddTransient<IRepository<Person>, EntityRepository<Person>>();
             services.AddTransient<IRepository<User>, EntityRepository<User>>();
             services.AddTransient<IRepository<Movie>, EntityRepository<Movie>>();
+            services.AddTransient<IRepository<UserMovieRatings>, EntityRepository<UserMovieRatings>>();
 
             services.AddCors();
             services.AddRouting();
