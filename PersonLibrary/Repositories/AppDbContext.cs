@@ -16,7 +16,17 @@ namespace PersonLibrary.Repositories
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             // add your own confguration here
+            modelBuilder.Entity<User>()
+                        .ToTable("Users");
+
+            modelBuilder.Entity<Person>()
+                        .ToTable("Persons");
+
+            modelBuilder.Entity<Movie>()
+                        .ToTable("Movies");
+
             modelBuilder.Entity<Movie>()
                 .Property(m => m.MovieId)
                 .HasColumnName("id");
@@ -60,6 +70,8 @@ namespace PersonLibrary.Repositories
             modelBuilder.Entity<Movie>()
                 .Property(m => m.UserRatingDate)
                 .HasColumnName("rating_date");
+
+            base.OnModelCreating(modelBuilder);
         }
 
         public override int SaveChanges()
@@ -71,9 +83,5 @@ namespace PersonLibrary.Repositories
         {
             return base.SaveChangesAsync();
         }
-
-        public DbSet<Person> Persons { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Movie> Movies { get; set; }
     }
 }

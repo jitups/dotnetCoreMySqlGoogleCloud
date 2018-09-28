@@ -47,7 +47,7 @@ namespace PersonLibrary.Repositories
         public void Update(T entity)
         {
             Entities.Update(entity);
-
+            _dbContext.SaveChanges();
         }
 
         public IEnumerable<T> GetPageWise(int pageNumber, int pageSize)
