@@ -41,7 +41,7 @@ namespace PersonWebApi.Controllers
         [Route(@"GetPagewise/{pageNumber}/{movieName}")]
         public IActionResult SearchPagewise(int pageNumber, string movieName)
         {
-            IEnumerable<Movie> movies = _movieRepository.GetAsPerCriteria(m => m.Title.StartsWith(movieName)).Skip((pageNumber - 1) * 10).Take(10);
+            IEnumerable<Movie> movies = _movieRepository.GetAsPerCriteria(m => m.Title.Contains(movieName.Trim())).Skip((pageNumber - 1) * 10).Take(10);
             return Ok(movies);
         }
 
