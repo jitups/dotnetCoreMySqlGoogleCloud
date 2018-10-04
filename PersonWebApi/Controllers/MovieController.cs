@@ -37,6 +37,14 @@ namespace PersonWebApi.Controllers
             return Ok(movies);
         }
 
+        [HttpGet]
+        [Route(@"GetPagewise/{pageNumber}/{movieName}")]
+        public IActionResult SearchPagewise(int pageNumber, string movieName)
+        {
+            IEnumerable<Movie> movies = _movieRepository.GetAsPerCriteria(m => m.Title.StartsWith(movieName)).Skip((pageNumber - 1) * 10).Take(10);
+            return Ok(movies);
+        }
+
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
