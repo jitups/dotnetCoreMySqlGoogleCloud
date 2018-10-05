@@ -23,6 +23,8 @@ namespace PersonLibrary.Entities
         [DataType(DataType.Date)]
         public DateTime UserRatingDate { get; set; }
 
+        public virtual ICollection<UserMovieRatings> UserMovieRatings { get; set; }
+
     }
 }
 

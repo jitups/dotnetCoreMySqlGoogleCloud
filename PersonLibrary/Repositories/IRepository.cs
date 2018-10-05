@@ -8,6 +8,7 @@ namespace PersonLibrary.Repositories
 {
     public interface IRepository<T> where T : class
     {
+        IQueryable<T> GetAllQueryable();
         IEnumerable<T> GetAll();
         T GetById(int personId);
         void Add(T entity);

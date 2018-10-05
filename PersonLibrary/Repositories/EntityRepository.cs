@@ -28,6 +28,11 @@ namespace PersonLibrary.Repositories
             _dbContext = dbContext;
         }
 
+        public IQueryable<T> GetAllQueryable()
+        {
+            return Entities.AsQueryable();
+        }
+
         public IEnumerable<T> GetAll()
         {
             return Entities;

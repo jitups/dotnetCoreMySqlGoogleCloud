@@ -27,6 +27,11 @@ namespace PersonLibrary.Repositories
             _personList.Add(entity);
         }
 
+        public IQueryable<Person> GetAllQueryable()
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Person> GetAll()
         {
             return _personList;
