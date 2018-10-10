@@ -1,0 +1,19 @@
+<p *ngIf="!persons"><em>Loading...</em></p>
+<table class='table' *ngIf="persons">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Temp. (C)</th>
+      <th>Temp. (F)</th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of persons">
+      <td>{{ person.firstName}}</td>
+      <td>{{ person.lastName}}</td>
+      <td>{{ person.dOB }}</td>
+      <td>{{ person.note }}</td>
+    </tr>
+  </tbody>
+</table>
