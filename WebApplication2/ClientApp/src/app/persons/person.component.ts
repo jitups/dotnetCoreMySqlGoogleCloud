@@ -2,12 +2,11 @@ import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-persons',
+  selector: 'app-person',
   templateUrl: './person.component.html'
 })
-export class Persos {
+export class PersonComponent {
   public persons: PersonViewModel[];
-
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     http.get<PersonViewModel[]>(baseUrl + 'api/SampleData/Persons').subscribe(result => {
