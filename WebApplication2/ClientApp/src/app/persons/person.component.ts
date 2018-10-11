@@ -9,6 +9,7 @@ export class PersonComponent {
   public persons: PersonViewModel[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+
     http.get<PersonViewModel[]>(baseUrl + 'api/SampleData/Persons').subscribe(result => {
       this.persons = result;
     }, error => console.error(error));
